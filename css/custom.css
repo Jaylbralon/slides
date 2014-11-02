@@ -1,0 +1,22 @@
+.wrong {
+    text-decoration: line-through;
+}
+
+section em:after {
+    content: ")";
+}
+
+section em:before {
+    content: "(";
+}
+
+.reveal section h3 {
+    font-size: 31px;
+    border-bottom: 1px solid black;
+    text-align: left;
+}
+
+.reveal section img {
+    border: none;
+    margin: 20px;
+}
