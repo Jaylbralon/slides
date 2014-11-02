@@ -30,6 +30,7 @@
 				document.getElementsByTagName( 'head' )[0].appendChild( link );
 			}
 		</script>
+		<script src="http://localhost:35729/livereload.js"></script>
 
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
@@ -93,21 +94,51 @@
 					</section>
 					<section id="architecture-2">
 						<h2>
-							1er choix : <b>API Rest</b> + <b>Client WebForm</b>
+							API REST + Client WebForm
 						</h2>
 						<ul>
 							<li>Peu d'experience avec cette architecture</li>
-							<li>Dans l'air du temps</li>
+							<li>Correspond au contexte actuel</li>
+							<li>Maintenable</li>
+							<li>Parallélisable</li>
+							<li>Scalable</li>
+							<li><em>(*.)able</em></li>
 						</ul>
 					</section>
 					<section id="architecture-3">
+						<img src="img/archi-api.png" alt="Sechéma Architecture API">
+					</section>
+					<section id="architecture-4">
 						<h2>
-							2nd choix : <b>Application MVC classique</b>
+							Client WebForm
 						</h2>
 						<ul>
-							<li>Plus d'experience avec cette archicture dans d'autres langages (SF2, Sails, etc.)</li>
-							<li>Banal</li>
+							<li>Embarque la logique métier</li>
+							<li>Interface avec l'utilisateur</li>
 						</ul>
+					</section>
+					<section id="architecture-5">
+						<h2>
+							API - Entity Framework
+						</h2>
+						<ul>
+							<li>(+) Marge de progression importante</li>
+							<li>(+/-) Génération de code</li>
+							<li>(-) Configuration complexe</li>
+						</ul>
+					</section>
+					<section id="architecture-6">
+						<h2>
+							Application MVC
+						</h2>
+						<ul>
+							<li>(-) Marge de progression moins importante</li>
+							<li>(+/-) Plus commun</li>
+							<li>(+) Plus simple à mettre en place</li>
+						</ul>
+					</section>
+					<section id="architecture-7">
+						<img src="img/archi-mvc.png" alt="Sechéma Architecture MVC">
 					</section>
 				</section>
 

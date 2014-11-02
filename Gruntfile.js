@@ -79,6 +79,7 @@ module.exports = function(grunt) {
 		connect: {
 			server: {
 				options: {
+					hostname: '0.0.0.0',
 					port: port,
 					base: '.'
 				}
@@ -98,10 +99,12 @@ module.exports = function(grunt) {
 
 		watch: {
 			main: {
-				files: [ 'Gruntfile.js', 'js/reveal.js', 'css/reveal.css' ],
+				options: { livereload: true },
+				files: [ 'Gruntfile.js', 'js/reveal.js', 'css/reveal.css', 'index.html'],
 				tasks: 'default'
 			},
 			theme: {
+				options: { livereload: true },
 				files: [ 'css/theme/source/*.scss', 'css/theme/template/*.scss' ],
 				tasks: 'themes'
 			}
@@ -110,7 +113,7 @@ module.exports = function(grunt) {
 	});
 
 	// Dependencies
-	grunt.loadNpmTasks( 'grunt-contrib-qunit' );
+	//grunt.loadNpmTasks( 'grunt-contrib-qunit' );
 	grunt.loadNpmTasks( 'grunt-contrib-jshint' );
 	grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
 	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
@@ -120,7 +123,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks( 'grunt-zip' );
 
 	// Default task
-	grunt.registerTask( 'default', [ 'jshint', 'cssmin', 'uglify', 'qunit' ] );
+	grunt.registerTask( 'default', [ 'jshint', 'cssmin', 'uglify' ] );
 
 	// Theme task
 	grunt.registerTask( 'themes', [ 'sass' ] );
@@ -132,6 +135,6 @@ module.exports = function(grunt) {
 	grunt.registerTask( 'serve', [ 'connect', 'watch' ] );
 
 	// Run tests
-	grunt.registerTask( 'test', [ 'jshint', 'qunit' ] );
+	grunt.registerTask( 'test', [ 'jshint' ] );
 
 };
