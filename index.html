@@ -31,17 +31,29 @@
 				document.getElementsByTagName( 'head' )[0].appendChild( link );
 			}
 		</script>
+		<script src="http://localhost:35729/livereload.js"></script>
 
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
+
+		<style>
+			.positive {
+				color: #27ae60;
+			}
+			.negative {
+				color: #e74c3c;
+			}
+			.neutral {
+				color: #f39c12;
+			}
+		</style>
 	</head>
 
 	<body>
 
 		<div class="reveal">
 
-			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section id="first">
 					<h1>ASP.NET</h1>
@@ -94,21 +106,51 @@
 					</section>
 					<section id="architecture-2">
 						<h2>
-							1er choix : <b>API Rest</b> + <b>Client WebForm</b>
+							API REST + Client WebForm
 						</h2>
 						<ul>
 							<li>Peu d'experience avec cette architecture</li>
-							<li>Dans l'air du temps</li>
+							<li>Correspond au contexte actuel</li>
+							<li>Maintenable</li>
+							<li>Parallélisable</li>
+							<li>Scalable</li>
+							<li><em>(*.)able</em></li>
 						</ul>
 					</section>
 					<section id="architecture-3">
+						<img src="img/archi-api.png" alt="Sechéma Architecture API">
+					</section>
+					<section id="architecture-4">
 						<h2>
-							2nd choix : <b>Application MVC classique</b>
+							Client WebForm
 						</h2>
 						<ul>
-							<li>Plus d'experience avec cette archicture dans d'autres langages (SF2, Sails, etc.)</li>
-							<li>Banal</li>
+							<li>Embarque la logique métier</li>
+							<li>Interface avec l'utilisateur</li>
 						</ul>
+					</section>
+					<section id="architecture-5">
+						<h2>
+							API - Entity Framework
+						</h2>
+						<ul>
+							<li><span class="positive">(+)</span> Marge de progression importante</li>
+							<li><span class="neutral">(+/-)</span> Génération de code</li>
+							<li><span class="negative">(-)</span> Configuration complexe</li>
+						</ul>
+					</section>
+					<section id="architecture-6">
+						<h2>
+							Application MVC
+						</h2>
+						<ul>
+							<li><span class="negative">(-)</span> Marge de progression moins importante</li>
+							<li><span class="neutral">(+/-)</span> Plus commun</li>
+							<li><span class="positive">(+)</span> Plus simple à mettre en place</li>
+						</ul>
+					</section>
+					<section id="architecture-7">
+						<img src="img/archi-mvc.png" alt="Sechéma Architecture MVC">
 					</section>
 				</section>
 
@@ -178,15 +220,21 @@
 						<h1>Gestion de projet</h1>
 					</section>
 					<section id="project-management-2">
+						<h2>Résumé des sprints</h2>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor provident at, corporis voluptates adipisci, aliquid non sequi saepe, reiciendis earum est? Cupiditate nihil, illum libero aliquid nemo tempore voluptates similique.
+							<b>Sprint 1</b> : 0 histoire à faire valider
+						</p>
+						<p>
+							<b>Sprint 2</b> :  8 histoires présentées, 3 en cours, 6 validées
 						</p>
 					</section>
 					<section id="project-management-3">
-						<h2>Gestion de projet</h2>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor provident at, corporis voluptates adipisci, aliquid non sequi saepe, reiciendis earum est? Cupiditate nihil, illum libero aliquid nemo tempore voluptates similique.
-						</p>
+						<h2>Scrum</h2>
+						<ul>
+							<li><span class="positive">(+)</span> Rapide à mettre en place (histoires et prioritées fournies)</li>
+							<li><span class="neutral">(+/-)</span> Ajout de tâches <em>non-histoires</em> (des bugs ou mémo)</li>
+							<li><span class="positive">(+)</span> Utilisation de Trello simple et efficace (Kanban déjà utilisé pour nos projets personnels)</li>
+						</ul>
 					</section>
 				</section>
 
@@ -197,27 +245,15 @@
 					</section>
 					<section id="personnal-conclusion-2">
 						<h2>Baptiste Bouchereau</h2>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor provident at, corporis voluptates adipisci, aliquid non sequi saepe, reiciendis earum est? Cupiditate nihil, illum libero aliquid nemo tempore voluptates similique.
-						</p>
 					</section>
 					<section id="personnal-conclusion-3">
 						<h2>Damien Cartet</h2>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor provident at, corporis voluptates adipisci, aliquid non sequi saepe, reiciendis earum est? Cupiditate nihil, illum libero aliquid nemo tempore voluptates similique.
-						</p>
 					</section>
 					<section id="personnal-conclusion-3">
 						<h2>Pierre-Jean Leger</h2>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor provident at, corporis voluptates adipisci, aliquid non sequi saepe, reiciendis earum est? Cupiditate nihil, illum libero aliquid nemo tempore voluptates similique.
-						</p>
 					</section>
 					<section id="personnal-conclusion-4">
 						<h2>Jeremy Longin</h2>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor provident at, corporis voluptates adipisci, aliquid non sequi saepe, reiciendis earum est? Cupiditate nihil, illum libero aliquid nemo tempore voluptates similique.
-						</p>
 					</section>
 				</section>
 
@@ -227,15 +263,43 @@
 						<h1>Conclusion</h1>
 					</section>
 					<section id="conclusion-2">
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor provident at, corporis voluptates adipisci, aliquid non sequi saepe, reiciendis earum est? Cupiditate nihil, illum libero aliquid nemo tempore voluptates similique.
-						</p>
+						<h2>Problèmes rencontrés</h2>
+						<table>
+							<tr>
+								<th>Problème</th>
+								<th>Raison</th>
+								<th>Solution</th>
+							</tr>
+							<tr>
+								<td>Impossible d'utiliser Entity Framework</td>
+								<td>Utilisation d'un dual-boot plutôt que la VM</td>
+								<td>Installation identique à la VM</td>
+							</tr>
+							<tr>
+								<td>Remplissage des ViewBags</td>
+								<td>Oubli de certains cas</td>
+								<td>Factorisation du code</td>
+							</tr>
+							<tr>
+								<td>Manque de temps</td>
+								<td>Difficultés sur l'API REST</td>
+								<td>Pivoter sur une autre architecture</td>
+							</tr>
+						</table>
 					</section>
 					<section id="conclusion-3">
-						<h2>Conclusion</h2>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor provident at, corporis voluptates adipisci, aliquid non sequi saepe, reiciendis earum est? Cupiditate nihil, illum libero aliquid nemo tempore voluptates similique.
-						</p>
+						<h2>Conclusion du projet</h2>
+						<ul>
+							<li><span class="negative">(-)</span> Frustrant car trop peu de temps pour prendre en main la technologie</li>
+						</ul>
+					</section>
+					<section id="conclusion-4">
+						<h2>Conclusion du module</h2>
+						<ul>
+							<li><span class="negative">(-)</span> TPs un peu trop assistés</li>
+							<li><span class="positive">(+)</span> Sujets intéressants (cas réels)</li>
+							<li><span class="positive">(+)</span> 1er approche projet Scrum</li>
+						</ul>
 					</section>
 				</section>
 
