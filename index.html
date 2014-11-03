@@ -47,6 +47,9 @@
 			.neutral {
 				color: #f39c12;
 			}
+			.reveal pre code {
+				font-size: 12px;
+			}
 		</style>
 	</head>
 
@@ -105,6 +108,7 @@
 						<h1>Architecture</h1>
 					</section>
 					<section id="architecture-2">
+						<h3>Architecture</h3>
 						<h2>
 							API REST + Client WebForm
 						</h2>
@@ -118,9 +122,11 @@
 						</ul>
 					</section>
 					<section id="architecture-3">
+						<h3>Architecture</h3>
 						<img src="img/archi-api.png" alt="Sechéma Architecture API">
 					</section>
 					<section id="architecture-4">
+						<h3>Architecture</h3>
 						<h2>
 							Client WebForm
 						</h2>
@@ -130,6 +136,7 @@
 						</ul>
 					</section>
 					<section id="architecture-5">
+						<h3>Architecture</h3>
 						<h2>
 							API - Entity Framework
 						</h2>
@@ -140,6 +147,7 @@
 						</ul>
 					</section>
 					<section id="architecture-6">
+						<h3>Architecture</h3>
 						<h2>
 							Application MVC
 						</h2>
@@ -150,6 +158,7 @@
 						</ul>
 					</section>
 					<section id="architecture-7">
+						<h3>Architecture</h3>
 						<img src="img/archi-mvc.png" alt="Sechéma Architecture MVC">
 					</section>
 				</section>
@@ -160,51 +169,51 @@
 						<h1>Histoires techniques</h1>
 					</section>
 					<section id="technical-stories-2">
-						<h3>Histoires techniques</h3><br/>
+						<h3>Histoires techniques</h3>
 						<h2>Utilisations de plusieurs technologies</h2>
 						<p>
-					        <ul>
-					            <li>MVC2</li>
-					            <li>JQuery / Ajax</li>
-					        </ul>
+							<ul>
+								<li>MVC2</li>
+								<li>JQuery / Ajax</li>
+							</ul>
 						</p>
 					</section>
 					<section id="technical-stories-4">
-						<h3>Histoires techniques</h3><br/>
+						<h3>Histoires techniques</h3>
 						<h2>Tests</h2>
 						<p>
-						    <ul>
-					            <li class="wrong">Tests UI</li>
-					            <li>Tests unitaires</li>
-					        </ul>
+							<ul>
+								<li class="wrong">Tests UI</li>
+								<li>Tests unitaires</li>
+							</ul>
 						</p>
 						<aside class="notes">
-					        <p>Ajouter des notes ici</p>
-					    </aside>
+							<p>Ajouter des notes ici</p>
+						</aside>
 					</section>
 					<section id="technical-stories-5">
-						<h3>Histoires techniques</h3><br/>
+						<h3>Histoires techniques</h3>
 						<h2>Versionning</h2>
 						<p>
-						    <img src="img/git.png" width=100 height=100 alt="logo git">
-						    <img src="img/visualstudio.png" width=100 height=100 alt="logo git">
+							<img src="img/git.png" width=100 height=100 alt="logo git">
+							<img src="img/visualstudio.png" width=100 height=100 alt="logo git">
 							<ul>
-							    <li><em>Git</em></li>
-							    <li>TFS</li>
+								<li><em>Git</em></li>
+								<li>TFS</li>
 							</ul>
 						</p>
 					</section>
 					<section id="technical-stories-5">
-						<h3>Histoires techniques</h3><br/>
+						<h3>Histoires techniques</h3>
 						<h2>Autres..</h2>
 						<p>
 							<ul>
-							    <li>Mots des passes cryptés en SHA512</li>
-							    <li>Utilisation du script fourni</li>
-							    <li>Procédure stockée</li>
-							    <li>Vues SQL</li>
-							    <li><em>Patrons de conception</em></li>
-							    <li class="wrong">Dossier de recette</li>
+								<li>Mots des passes cryptés en SHA512</li>
+								<li>Utilisation du script fourni</li>
+								<li>Procédure stockée</li>
+								<li>Vues SQL</li>
+								<li><em>Patrons de conception</em></li>
+								<li class="wrong">Dossier de recette</li>
 							</ul>
 						</p>
 					</section>
@@ -217,12 +226,14 @@
 
 					</section>
 					<section id="achievement-example-2">
+						<h3>Exemple de réalisation</h3>
 						<h2>Ajout d'un hôtelier</h2>
 						<p>
 							Pour que l'utilisateur puisse ajouter un hôtelier, il faut que notre application possède une classe hôtelier, une classe service qui permette d'utiliser et de manipuler cette objet hôtelier, une classe qui permette de faire le lien entre la vue et le service hôtelier et enfin une vue qui sera afficher à l'utilisateur.
 						</p>
 					</section>
 					<section id="achievement-example-3">
+						<h3>Exemple de réalisation</h3>
 						<h2>Classe de l'hôtelier</h2>
 						<p>
 							Cette classe représente l'objet hôtelier, elle contient les mêmes attribues que la table Hôtelier.
@@ -230,85 +241,86 @@
 						<table>
 							<tr>
 								<td>
-									<pre><code data-trim>
-										public class Hotelier
-									    {
-									        public int Id { get; set; }
-									        [Required]
-									        [DisplayName("Nom *")]
-									        public string Nom { get; set; }
-									        [Required]
-									        [DisplayName("Prénom *")]
-									        public string Prenom { get; set; }
-									        [Required]
-									        [MinLength(6)]
-									        [DataType(DataType.Password)]
-									        [DisplayName("Mot de passe *")]
-									        public string MotPasse { get; set; }
-									        [Required]
-									        [EmailAddress]
-									        [DisplayName("Adresse email *")]
-									        public string Mail { get; set; }
-									        [Required]
-									        [DisplayName("Adresse ligne 1 *")]
-									        public string AdrLigne1 { get; set; }
-									        [DisplayName("Adresse ligne 2")]
-									        public string AdrLigne2 { get; set; }
-									        [Required]
-									        [DisplayName("Code postal *")]
-									        public string CP { get; set; }
-									        [Required]
-									        [DisplayName("Ville *")]
-									        public string Ville { get; set; }
-									        public string Etat { get; set; }
-									        [Required]
-									        [DisplayName("Pays *")]
-									        public int PAY_ID { get; set; }
+									<pre style="width:550px;"><code>
+public class Hotelier
+{
+	public int Id { get; set; }
+	[Required]
+	[DisplayName( "Nom *" )]
+	public string Nom { get; set; }
+	[Required]
+	[DisplayName("Prénom *")]
+	public string Prenom { get; set; }
+	[Required]
+	[MinLength(6)]
+	[DataType(DataType.Password)]
+	[DisplayName("Mot de passe *")]
+	public string MotPasse { get; set; }
+	[Required]
+	[EmailAddress]
+	[DisplayName("Adresse email *")]
+	public string Mail { get; set; }
+	[Required]
+	[DisplayName("Adresse ligne 1 *")]
+	public string AdrLigne1 { get; set; }
+	[DisplayName("Adresse ligne 2")]
+	public string AdrLigne2 { get; set; }
+	[Required]
+	[DisplayName("Code postal *")]
+	public string CP { get; set; }
+	[Required]
+	[DisplayName("Ville *")]
+	public string Ville { get; set; }
+	public string Etat { get; set; }
+	[Required]
+	[DisplayName("Pays *")]
+	public int PAY_ID { get; set; }
 
-									        public static string HashPassword(string content)
-									        {
-									            if (content == null)
-									            {
-									                return null;
-									            }
+	public static string HashPassword(string content)
+	{
+		if (content == null)
+		{
+			return null;
+		}
 
-									            HashAlgorithm hash = new SHA512CryptoServiceProvider();
-									            UnicodeEncoding encoding = new UnicodeEncoding();
-									            Byte[] bytesContent = Encoding.UTF8.GetBytes(content);
-									            Byte[] bytesResult = hash.ComputeHash(bytesContent);
+		HashAlgorithm hash = new SHA512CryptoServiceProvider();
+		UnicodeEncoding encoding = new UnicodeEncoding();
+		Byte[] bytesContent = Encoding.UTF8.GetBytes(content);
+		Byte[] bytesResult = hash.ComputeHash(bytesContent);
 
-									            StringBuilder result = new StringBuilder(bytesResult.Length * 2);
+		StringBuilder result = new StringBuilder(bytesResult.Length * 2);
 
-									            for (int i = 0; i < bytesResult.Length; i++) {
-									                result.Append(bytesResult[i].ToString("x2"));
-									            }
+		for (int i = 0; i < bytesResult.Length; i++) {
+			result.Append(bytesResult[i].ToString("x2"));
+		}
 
-									            return result.ToString();
-									        }
-									    }
+		return result.ToString();
+	}
+}
 									</code></pre>
 								</td>
 								<td>
-									<pre><code data-trim>
-										SELECT TOP 1000 [HTR_ID]
-										      ,[HTR_MEL]
-										      ,[HTR_MOTPASSE]
-										      ,[HTR_NOM]
-										      ,[HTR_PRENOM]
-										      ,[HTR_ADRLIGNE1]
-										      ,[HTR_ADRLIGNE2]
-										      ,[HTR_CP]
-										      ,[HTR_VILLE]
-										      ,[HTR_ETAT]
-										      ,[PAY_ID]
-										  FROM [Hotel].[dbo].[T_E_HOTELIER_HTR]
-									</code></pre>			
+									<pre style="width: 250px"><code>
+SELECT TOP 1000 [HTR_ID]
+	  ,[HTR_MEL]
+	  ,[HTR_MOTPASSE]
+	  ,[HTR_NOM]
+	  ,[HTR_PRENOM]
+	  ,[HTR_ADRLIGNE1]
+	  ,[HTR_ADRLIGNE2]
+	  ,[HTR_CP]
+	  ,[HTR_VILLE]
+	  ,[HTR_ETAT]
+	  ,[PAY_ID]
+ FROM [Hotel].[dbo].[T_E_HOTELIER_HTR]
+									</code></pre>
 								</td>
 							</tr>
 						</table>
 						
 					</section>
 					<section id="achievement-example-4">
+						<h3>Exemple de réalisation</h3>
 						<h2>Service Hotelier</h2>
 						<p>
 							Le service Hotlier permet de manipuler le modèle hôtelier, il permet:
@@ -324,113 +336,115 @@
 								d'afficher un ou tous les hoteliers
 							</li>	
 
-							<pre><code data-trim>
-								public int Create(Hotelier hotelier)
-						        {
-						            try
-						            {
-						                DataAccess da = new DataAccess();
-						                int id = da.InsertHotelier(
-						                    hotelier.Nom,
-						                    hotelier.Prenom,
-						                    Hotelier.HashPassword(hotelier.MotPasse),
-						                    hotelier.Mail,
-						                    hotelier.AdrLigne1,
-						                    hotelier.AdrLigne2,
-						                    hotelier.CP,
-						                    hotelier.Ville,
-						                    hotelier.Etat,
-						                    hotelier.PAY_ID
-						                );
+							<pre><code>
+public int Create(Hotelier hotelier)
+{
+	try
+	{
+		DataAccess da = new DataAccess();
+		int id = da.InsertHotelier(
+			hotelier.Nom,
+			hotelier.Prenom,
+			Hotelier.HashPassword(hotelier.MotPasse),
+			hotelier.Mail,
+			hotelier.AdrLigne1,
+			hotelier.AdrLigne2,
+			hotelier.CP,
+			hotelier.Ville,
+			hotelier.Etat,
+			hotelier.PAY_ID
+		);
 
-						                return id;
-						            }
-						            catch
-						            {
-						                return -1;
-						            }
-						        }
+		return id;
+	}
+	catch
+	{
+		return -1;
+	}
+}
 							</code></pre>										
 					</section>
 					<section id="achievement-example-5">
-						<h2>Controlleur hôtelier</h2>
+						<h3>Exemple de réalisation</h3>
+						<h2>Contrôleur hôtelier</h2>
 						<p>
 							Le controlleur permet de faire le lien entre la vue et le modèle.
 						</p>
 						<table>
 							<tr>
 								<td>
-									<pre><code data-trim>
-										public int Create(Hotelier hotelier)
-								        {
-								            try
-								            {
-								                DataAccess da = new DataAccess();
-								                int id = da.InsertHotelier(
-								                    hotelier.Nom,
-								                    hotelier.Prenom,
-								                    Hotelier.HashPassword(hotelier.MotPasse),
-								                    hotelier.Mail,
-								                    hotelier.AdrLigne1,
-								                    hotelier.AdrLigne2,
-								                    hotelier.CP,
-								                    hotelier.Ville,
-								                    hotelier.Etat,
-								                    hotelier.PAY_ID
-								                );
+									<pre><code>
+public int Create(Hotelier hotelier)
+{
+	try
+	{
+		DataAccess da = new DataAccess();
+		int id = da.InsertHotelier(
+			hotelier.Nom,
+			hotelier.Prenom,
+			Hotelier.HashPassword(hotelier.MotPasse),
+			hotelier.Mail,
+			hotelier.AdrLigne1,
+			hotelier.AdrLigne2,
+			hotelier.CP,
+			hotelier.Ville,
+			hotelier.Etat,
+			hotelier.PAY_ID
+		);
 
-								                return id;
-								            }
-								            catch
-								            {
-								                return -1;
-								            }
-								        }
+		return id;
+	}
+	catch
+	{
+		return -1;
+	}
+}
 									</code></pre>
 								</td>
 								<td>
-									<pre><code data-trim>
-										public ActionResult Create(Hotelier post)
-									        {
-									            if (!ModelState.IsValid)
-									            {
-									                return View();
-									            }
-									            HotelierService hotelierService = new HotelierService();
-									            Hotelier hotelier = new Hotelier();
-									            // remplit l'objet hotelier à partir du formulaire (post)
-									            UpdateModel(hotelier);
-									            if (hotelierService.Create(hotelier) != -1) // si la création dans la base a fonctionné
-									            {
-									                return Redirect("/");
-									            }
-									            else
-									            {
+									<pre><code>
+public ActionResult Create(Hotelier post)
+	{
+		if (!ModelState.IsValid)
+		{
+			return View();
+		}
+		HotelierService hotelierService = new HotelierService();
+		Hotelier hotelier = new Hotelier();
+		// remplit l'objet hotelier à partir du formulaire (post)
+		UpdateModel(hotelier);
+		if (hotelierService.Create(hotelier) != -1) // si la création dans la base a fonctionné
+		{
+			return Redirect("/");
+		}
+		else
+		{
 
-									                // Recuperation de la liste des pays
-									                PaysService paysServ = new PaysService();
-									                List<Pays> listePays = new List<Pays> { };
-									                listePays = paysServ.ReadAll();
-									                //La propriété Pays du ViewBag contient la liste
-									                ViewBag.Pays = listePays;
+			// Recuperation de la liste des pays
+			PaysService paysServ = new PaysService();
+			List<Pays> listePays = new List<Pays> { };
+			listePays = paysServ.ReadAll();
+			//La propriété Pays du ViewBag contient la liste
+			ViewBag.Pays = listePays;
 
-									                // Recuperation de la liste des categories d'hotels
-									                IndicatifService indicatifServ = new IndicatifService();
-									                List<Indicatif> listeIndicatif = new List<Indicatif> { };
-									                listeIndicatif = indicatifServ.ReadAll();
-									                //La propriété Pays du ViewBag contient la liste
-									                ViewBag.Indicatifs = listeIndicatif;
-									                // sinon, on retourne la vue avec un message d'erreur
-									                ViewData["ErrorMessage"] = "Impossible d'insérer l'hotelier.";
-									                return View();
-									            }
-									        }
+			// Recuperation de la liste des categories d'hotels
+			IndicatifService indicatifServ = new IndicatifService();
+			List<Indicatif> listeIndicatif = new List<Indicatif> { };
+			listeIndicatif = indicatifServ.ReadAll();
+			//La propriété Pays du ViewBag contient la liste
+			ViewBag.Indicatifs = listeIndicatif;
+			// sinon, on retourne la vue avec un message d'erreur
+			ViewData["ErrorMessage"] = "Impossible d'insérer l'hotelier.";
+			return View();
+		}
+	}
 									</code></pre>
 								</td>
 							</tr>
 						</table>
 					</section>
 					<section id="achievement-example-6">
+						<h3>Exemple de réalisation</h3>
 						<h2>La vue</h2>
 							<img src="img/formulaireHotelier.jpg">
 					</section>
@@ -584,6 +598,6 @@
 			document.getElementById('currentDate').text = ("0" + currentDate.getDate()).slice(-2) + '/' + ("0" + (currentDate.getMonth() + 1)).slice(-2) + '/' + currentDate.getFullYear();		
 
 		</script>
-        <script src="//192.168.1.16:35729/livereload.js"></script>
+		<script src="//192.168.1.16:35729/livereload.js"></script>
 	</body>
 </html>
