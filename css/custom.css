@@ -12,8 +12,9 @@ section em:before {
 
 .reveal section h3 {
     font-size: 31px;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #268bd2;
     text-align: left;
+    margin-bottom: 40px;
 }
 
 .reveal section img {
