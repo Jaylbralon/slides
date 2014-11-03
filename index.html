@@ -88,7 +88,7 @@
 					<section id="needs-2">
 						<h3>Besoins</h3>
 						<p>
-							Réaliser une application de type Trip Advisor permettant de consulter, noter et réserver des hotels.<br/>
+							Réaliser une application de type Trip Advisor permettant de consulter, noter et réserver des hôtels.<br/>
 						</p>
 						<ul>
 							<li>24 user stories</li>
@@ -115,9 +115,9 @@
 							<li>Un utilisateur de type Hotelier peut</li>
 							<ul>
 								<li>Créer un Hotel, le modifier, le supprimer</li>
-								<li>Consulter les avis déposés sur son hotel</li>
+								<li>Consulter les avis déposés sur son hôtel</li>
 								<li>Ajouter des photos de son hôtel</li>
-								<li>Proposer des hotels similaires au mien lorsqu'il est complet</li>
+								<li>Proposer des hôtels similaires au mien lorsqu'il est complet</li>
 							</ul>
 						</ul>
 					</section>
@@ -334,15 +334,15 @@ SELECT TOP 1000 [HTR_ID]
 							</li>	
 
 							<pre><code>
-public int Create(Hotelier hotelier)
+public int Create(Hotelier hôtelier)
 {
 	try	{
 		DataAccess da = new DataAccess();
 		int id = da.InsertHotelier(
-			hotelier.Nom,
-			hotelier.Prenom,
+			hôtelier.Nom,
+			hôtelier.Prenom,
 			/* ... */
-			hotelier.PAY_ID		);
+			hôtelier.PAY_ID		);
 		return id;	}
 	catch
 	{
@@ -360,15 +360,15 @@ public int Create(Hotelier hotelier)
 							<tr>
 								<td>
 									<pre><code>
-public int Create(Hotelier hotelier){
+public int Create(Hotelier hôtelier){
 	try	{
 		DataAccess da = new DataAccess();
 		int id = da.InsertHotelier(
-			hotelier.Nom,
-			hotelier.Prenom,
-			Hotelier.HashPassword(hotelier.MotPasse),
+			hôtelier.Nom,
+			hôtelier.Prenom,
+			Hotelier.HashPassword(hôtelier.MotPasse),
 			/* ... */
-			hotelier.PAY_ID
+			hôtelier.PAY_ID
 		);
 		return id;	}
 	catch	{
@@ -381,15 +381,15 @@ public int Create(Hotelier hotelier){
 public ActionResult Create(Hotelier post)	{
 		if (!ModelState.IsValid)
 			return View();
-		HotelierService hotelierService = new HotelierService();
-		Hotelier hotelier = new Hotelier();
-		// remplit l'objet hotelier à partir du formulaire (post)
-		UpdateModel(hotelier);
-		if (hotelierService.Create(hotelier) != -1) // si la création dans la base a fonctionné
+		HotelierService hôtelierService = new HotelierService();
+		Hotelier hôtelier = new Hotelier();
+		// remplit l'objet hôtelier à partir du formulaire (post)
+		UpdateModel(hôtelier);
+		if (hôtelierService.Create(hôtelier) != -1) // si la création dans la base a fonctionné
 			return Redirect("/");
 		else		{
 			// sinon, on retourne la vue avec un message d'erreur
-			ViewData["ErrorMessage"] = "Impossible d'insérer l'hotelier.";
+			ViewData["ErrorMessage"] = "Impossible d'insérer l'hôtelier.";
 			return View();		}
 	}
 									</code></pre>
@@ -471,12 +471,13 @@ public ActionResult Create(Hotelier post)	{
 						<h3>Bilan personnel</h3>
 						<h2>Jeremy Longin</h2>
 						<ul>
-							<li>TPs très directif</li>
+							<li>TPs très directifs</li>
 							<ul>
 								<li><span class="positive">(+)</span>Utile pour le projet</li>
 								<li><span class="negative">(-)</span>Compréhension réduite</li>
 							</ul>
 							<li>Difficulté de démarrage</li>
+							<li>Découverte de nouveaux outils : TFS, Trello</li>
 							<li>Mise en applicaion de la méthode SCRUM</li>
 						</ul>
 					</section>
