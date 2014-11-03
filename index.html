@@ -348,8 +348,7 @@ SELECT TOP 1000 [HTR_ID]
 							<pre><code>
 public int Create(Hotelier hotelier)
 {
-	try
-	{
+	try	{
 		DataAccess da = new DataAccess();
 		int id = da.InsertHotelier(
 			hotelier.Nom,
@@ -374,14 +373,12 @@ public int Create(Hotelier hotelier)
 								<td>
 									<pre><code>
 public int Create(Hotelier hotelier){
-	try
-	{
+	try	{
 		DataAccess da = new DataAccess();
 		int id = da.InsertHotelier(
 			hotelier.Nom,
 			hotelier.Prenom,
 			Hotelier.HashPassword(hotelier.MotPasse),
-			hotelier.Mail,
 			/* ... */
 			hotelier.PAY_ID
 		);
