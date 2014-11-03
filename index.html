@@ -255,8 +255,22 @@
 						<h3>Exemple de réalisation</h3>
 						<h2>Ajout d'un hôtelier</h2>
 						<p>
-							Pour que l'utilisateur puisse ajouter un hôtelier, il faut que notre application possède une classe hôtelier, une classe service qui permette d'utiliser et de manipuler cette objet hôtelier, une classe qui permette de faire le lien entre la vue et le service hôtelier et enfin une vue qui sera afficher à l'utilisateur.
+							Pour que l'utilisateur puisse ajouter un hôtelier, il faut:
 						</p>
+						<ul>
+							<li>
+								une classe Hôtelier
+							</li>
+							<li>
+								une classe Service
+							</li>
+							<li>
+								un Controlleur
+							</li>
+							<li>
+								une Vue
+							</li>
+						</ul>
 					</section>
 					<section id="achievement-example-3">
 						<h3>Exemple de réalisation</h3>
@@ -276,52 +290,11 @@ public class Hotelier
 	public string Nom { get; set; }
 	[Required]
 	[DisplayName("Prénom *")]
-	public string Prenom { get; set; }
-	[Required]
-	[MinLength(6)]
-	[DataType(DataType.Password)]
-	[DisplayName("Mot de passe *")]
-	public string MotPasse { get; set; }
-	[Required]
-	[EmailAddress]
-	[DisplayName("Adresse email *")]
-	public string Mail { get; set; }
-	[Required]
-	[DisplayName("Adresse ligne 1 *")]
-	public string AdrLigne1 { get; set; }
-	[DisplayName("Adresse ligne 2")]
-	public string AdrLigne2 { get; set; }
-	[Required]
-	[DisplayName("Code postal *")]
-	public string CP { get; set; }
-	[Required]
-	[DisplayName("Ville *")]
-	public string Ville { get; set; }
-	public string Etat { get; set; }
+	public string Prenom { get; set; }	
+	/* ...  */
 	[Required]
 	[DisplayName("Pays *")]
 	public int PAY_ID { get; set; }
-
-	public static string HashPassword(string content)
-	{
-		if (content == null)
-		{
-			return null;
-		}
-
-		HashAlgorithm hash = new SHA512CryptoServiceProvider();
-		UnicodeEncoding encoding = new UnicodeEncoding();
-		Byte[] bytesContent = Encoding.UTF8.GetBytes(content);
-		Byte[] bytesResult = hash.ComputeHash(bytesContent);
-
-		StringBuilder result = new StringBuilder(bytesResult.Length * 2);
-
-		for (int i = 0; i < bytesResult.Length; i++) {
-			result.Append(bytesResult[i].ToString("x2"));
-		}
-
-		return result.ToString();
-	}
 }
 									</code></pre>
 								</td>
@@ -349,44 +322,33 @@ SELECT TOP 1000 [HTR_ID]
 						<h3>Exemple de réalisation</h3>
 						<h2>Service Hotelier</h2>
 						<p>
-							Le service Hotlier permet de manipuler le modèle hôtelier, il permet:
+							Le service Hôtelier permet de manipuler le modèle hôtelier, il permet:
 						</p>
 						<ul>
 							<li>
-								de créer un hotleier
+								de créer un hôtelier
 							</li>
 							<li>
-								de l'editer
+								de l'éditer
 							</li>
 							<li>
-								d'afficher un ou tous les hoteliers
+								d'afficher un ou tous les hôteliers
 							</li>	
 
 							<pre><code>
 public int Create(Hotelier hotelier)
 {
-	try
-	{
+	try	{
 		DataAccess da = new DataAccess();
 		int id = da.InsertHotelier(
 			hotelier.Nom,
 			hotelier.Prenom,
-			Hotelier.HashPassword(hotelier.MotPasse),
-			hotelier.Mail,
-			hotelier.AdrLigne1,
-			hotelier.AdrLigne2,
-			hotelier.CP,
-			hotelier.Ville,
-			hotelier.Etat,
-			hotelier.PAY_ID
-		);
-
-		return id;
-	}
+			/* ... */
+			hotelier.PAY_ID		);
+		return id;	}
 	catch
 	{
-		return -1;
-	}
+		return -1;	}
 }
 							</code></pre>										
 					</section>
@@ -394,75 +356,43 @@ public int Create(Hotelier hotelier)
 						<h3>Exemple de réalisation</h3>
 						<h2>Contrôleur hôtelier</h2>
 						<p>
-							Le controlleur permet de faire le lien entre la vue et le modèle.
+							Le contrôlleur permet de faire le lien entre la vue et le modèle.
 						</p>
 						<table>
 							<tr>
 								<td>
 									<pre><code>
-public int Create(Hotelier hotelier)
-{
-	try
-	{
+public int Create(Hotelier hotelier){
+	try	{
 		DataAccess da = new DataAccess();
 		int id = da.InsertHotelier(
 			hotelier.Nom,
 			hotelier.Prenom,
 			Hotelier.HashPassword(hotelier.MotPasse),
-			hotelier.Mail,
-			hotelier.AdrLigne1,
-			hotelier.AdrLigne2,
-			hotelier.CP,
-			hotelier.Ville,
-			hotelier.Etat,
+			/* ... */
 			hotelier.PAY_ID
 		);
-
-		return id;
-	}
-	catch
-	{
-		return -1;
-	}
+		return id;	}
+	catch	{
+		return -1;	}
 }
 									</code></pre>
 								</td>
 								<td>
 									<pre><code>
-public ActionResult Create(Hotelier post)
-	{
+public ActionResult Create(Hotelier post)	{
 		if (!ModelState.IsValid)
-		{
 			return View();
-		}
 		HotelierService hotelierService = new HotelierService();
 		Hotelier hotelier = new Hotelier();
 		// remplit l'objet hotelier à partir du formulaire (post)
 		UpdateModel(hotelier);
 		if (hotelierService.Create(hotelier) != -1) // si la création dans la base a fonctionné
-		{
 			return Redirect("/");
-		}
-		else
-		{
-
-			// Recuperation de la liste des pays
-			PaysService paysServ = new PaysService();
-			List<Pays> listePays = new List<Pays> { };
-			listePays = paysServ.ReadAll();
-			//La propriété Pays du ViewBag contient la liste
-			ViewBag.Pays = listePays;
-
-			// Recuperation de la liste des categories d'hotels
-			IndicatifService indicatifServ = new IndicatifService();
-			List<Indicatif> listeIndicatif = new List<Indicatif> { };
-			listeIndicatif = indicatifServ.ReadAll();
-			//La propriété Pays du ViewBag contient la liste
-			ViewBag.Indicatifs = listeIndicatif;
+		else		{
 			// sinon, on retourne la vue avec un message d'erreur
 			ViewData["ErrorMessage"] = "Impossible d'insérer l'hotelier.";
-			return View();
-		}
+			return View();		}
 	}
 									</code></pre>
 								</td>
