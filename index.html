@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Slides - Fin de module ASP.NET</title>
+		<title>Slides - Fin de module JEE</title>
 
 		<meta name="description" content="A (probably orring) school presentation">
 		<meta name="author" content="Caligone">
@@ -59,10 +59,19 @@
 
 			<div class="slides">
 				<section id="first">
-					<h1>ASP.NET</h1>
-					<h2>Soutenance de fin de module</h2>
+					<h1>Java EE</h1>
+					<h2>Soutenance de fin de projet</h2>
 					<p>
-						<small>Par <a href="#">Baptiste Bouchereau</a> / <a href="#">Damien Cartet</a> / <a href="http://twitter.com/Calig0ne">Pierre-Jean Léger</a> / <a href="#">Jeremy Longin</a> le <a href="#" id="currentDate">01/01/2000</a></small>
+						<small>Par
+							<a href="#">Baptiste Bouchereau</a>, 
+							<a href="#">Damien Cartet</a>, 
+							<a href="#">Pierre-Jean Léger</a>, 
+	 						<a href="#">Jeremy Longin</a> et 
+							<a href="#">Nicolas Parimeros</a>
+	 					</small>
+						<small>
+							Le <a href="#" id="currentDate">01/01/2000</a>
+						</small>
 					</p>
 				</section>
 
@@ -70,23 +79,26 @@
 					<h2>Sommaire</h2>
 					
 					<ol>
-						<li><a href="#needs">Besoins</a></li>
-						<li><a href="#architecture">Architecture</a></li>
-						<li><a href="#technical-stories">Histoires techniques</a></li>
-						<li><a href="#achievement-example">Exemple de réalisation</a></li>
-						<li><a href="#project-management">Gestion de projet</a></li>
-						<li><a href="#personnal-conclusion">Bilan personnel</a></li>
+						<li><a href="#demo">Demonstration</a></li>
+						<li><a href="#demo">Architecture</a></li>
 						<li><a href="#conclusion">Conclusion</a></li>
 					</ol>
 				</section>
 
-				<!-- Besoins -->
-				<section id="needs">
-					<section id="needs-1">
-						<h1>Besoins</h1>
+				<!-- Demonstration -->
+				<section id="demo">
+					<section id="demo-1">
+						<h1>Demonstration</h1>
 					</section>
-					<section id="needs-2">
-						<h3>Besoins</h3>
+				</section>
+
+				<!-- Architecture -->
+				<section id="archi">
+					<section id="archi-1">
+						<h1>Architecture</h1>
+					</section>
+					<section id="archi-2">
+						<h3>Architecture</h3>
 						<p>
 							Réaliser une application de type Trip Advisor permettant de consulter, noter et réserver des hôtels.<br/>
 						</p>
@@ -96,465 +108,7 @@
 							<li>Développer un projet selon la méthode SCRUM</li>
 						</ul>
 					</section>
-					<section id="needs-3">
-						<h3>Besoins</h3>
-						<h2>Gestion des utilisateurs</h2>
-						<ul>
-							<li>Création et modification d'un compte utilisateur selon deux types</li>
-							<ul>
-								<li>Hotelier</li>
-								<li>Abonné</li>
-							</ul>
-							<li>Gérer également le statut de visiteur non enregistré</li>
-						</ul>
-					</section>
-					<section id="needs-4">
-						<h3>Besoins</h3>
-						<h2>Fonctionnalités des utilisateurs (1)</h2>
-						<ul>
-							<li>Un utilisateur de type Hotelier peut</li>
-							<ul>
-								<li>Créer un Hotel, le modifier, le supprimer</li>
-								<li>Consulter les avis déposés sur son hôtel</li>
-								<li>Ajouter des photos de son hôtel</li>
-								<li>Proposer des hôtels similaires au mien lorsqu'il est complet</li>
-							</ul>
-						</ul>
-					</section>
-					<section id="needs-4">
-						<h3>Besoins</h3>
-						<h2>Fonctionnalités des utilisateurs (2)</h2>
-						<ul>
-							<li>Un utilisateur de type Abonné peut</li>
-							<ul>
-								<li>Déposer un avis</li>
-								<li>Consulter un avis sur un hôtel</li>
-								<li>Indiquer qu'un avis m'a été utile</li>
-								<li>Réserver un hôtel</li>
-								<li>Consulter les photos d'un hôtel</li>
-								<li>Conserver un hôtel dans mes favoris</li>
-								<li>Supprimer un hôtel de mes favoris</li>
-							</ul>
-						</ul>
-					</section>
 				</section>
-
-				<!-- Architecture -->
-				<section id="architecture">
-					<section id="architecture-1">
-						<h1>Architecture</h1>
-					</section>
-					<section id="architecture-2">
-						<h3>Architecture</h3>
-						<h2>
-							API REST + Client WebForm
-						</h2>
-						<ul>
-							<li>Peu d'experience avec cette architecture</li>
-							<li>Correspond au contexte actuel</li>
-							<li>Maintenable</li>
-							<li>Parallélisable</li>
-							<li>Scalable</li>
-							<li><em>(.*)able</em></li>
-						</ul>
-					</section>
-					<section id="architecture-3">
-						<h3>Architecture</h3>
-						<img src="img/archi-api.png" alt="Sechéma Architecture API">
-					</section>
-					<section id="architecture-4">
-						<h3>Architecture</h3>
-						<h2>
-							Client WebForm
-						</h2>
-						<ul>
-							<li>Embarque la logique métier</li>
-							<li>Interface avec l'utilisateur</li>
-						</ul>
-					</section>
-					<section id="architecture-5">
-						<h3>Architecture</h3>
-						<h2>
-							API - Entity Framework
-						</h2>
-						<ul>
-							<li><span class="positive">(+)</span> Marge de progression importante</li>
-							<li><span class="neutral">(+/-)</span> Génération de code</li>
-							<li><span class="negative">(-)</span> Configuration complexe</li>
-						</ul>
-					</section>
-					<section id="architecture-6">
-						<h3>Architecture</h3>
-						<h2>
-							Application MVC
-						</h2>
-						<ul>
-							<li><span class="negative">(-)</span> Marge de progression moins importante</li>
-							<li><span class="neutral">(+/-)</span> Plus commun</li>
-							<li><span class="positive">(+)</span> Plus simple à mettre en place</li>
-						</ul>
-					</section>
-					<section id="architecture-7">
-						<h3>Architecture</h3>
-						<img src="img/archi-mvc.png" alt="Sechéma Architecture MVC">
-					</section>
-				</section>
-
-				<!-- Histoire technique -->
-				<section id="technical-stories">
-					<section id="technical-stories-1">
-						<h1>Histoires techniques</h1>
-					</section>
-					<section id="technical-stories-2">
-						<h3>Histoires techniques</h3>
-						<h2>Utilisations de plusieurs technologies</h2>
-						<p>
-							<ul>
-							    <li><em>Api Rest</em></li>
-							    <li><em>Client WebForm</em></li>
-								<li>MVC2</li>
-								<li>JQuery / Ajax</li>
-							</ul>
-						</p>
-					</section>
-					<section id="technical-stories-4">
-						<h3>Histoires techniques</h3>
-						<h2>Versionning</h2>
-						<p>
-							<img src="img/git.png" width=100 height=100 alt="logo git">
-							<img src="img/visualstudio.png" width=100 height=100 alt="logo git">
-							<ul>
-								<li><em>Git</em></li>
-								<li>TFS</li>
-							</ul>
-						</p>
-					</section>
-					<section id="technical-stories-5">
-						<h3>Histoires techniques</h3>
-						<h2>Autres..</h2>
-						<p>
-							<ul>
-							    <li>Tests unitaires</li>
-								<li>Mots des passes cryptés en SHA512</li>
-								<li>Utilisation du script fourni</li>
-								<li>Procédure stockée</li>
-								<li>Vues SQL</li>
-							</ul>
-						</p>
-					</section>
-				</section>
-
-				<!-- Exemple de réalisation -->
-				<section id="achievement-example">
-					<section id="achievement-example-1">
-						<h1>Exemple de réalisation</h1>
-					</section>
-					<section id="achievement-example-2">
-						<h3>Exemple de réalisation</h3>
-						<h2>Ajout d'un hôtelier</h2>
-						<p>
-							Pour que l'utilisateur puisse ajouter un hôtelier, il faut:
-						</p>
-						<ul>
-							<li>
-								une classe Hôtelier
-							</li>
-							<li>
-								une classe Service
-							</li>
-							<li>
-								un Controlleur
-							</li>
-							<li>
-								une Vue
-							</li>
-						</ul>
-					</section>
-					<section id="achievement-example-3">
-						<h3>Exemple de réalisation</h3>
-						<h2>Classe de l'hôtelier</h2>
-						<p>
-							Cette classe représente l'objet hôtelier, elle contient les mêmes attribues que la table Hôtelier.
-						</p>
-						<table>
-							<tr>
-								<td>
-									<pre style="width:550px;"><code>
-public class Hotelier
-{
-	public int Id { get; set; }
-	[Required]
-	[DisplayName( "Nom *" )]
-	public string Nom { get; set; }
-	[Required]
-	[DisplayName("Prénom *")]
-	public string Prenom { get; set; }	
-	/* ...  */
-	[Required]
-	[DisplayName("Pays *")]
-	public int PAY_ID { get; set; }
-}
-									</code></pre>
-								</td>
-								<td>
-									<pre style="width: 250px"><code>
-SELECT TOP 1000 [HTR_ID]
-	  ,[HTR_MEL]
-	  ,[HTR_MOTPASSE]
-	  ,[HTR_NOM]
-	  ,[HTR_PRENOM]
-	  ,[HTR_ADRLIGNE1]
-	  ,[HTR_ADRLIGNE2]
-	  ,[HTR_CP]
-	  ,[HTR_VILLE]
-	  ,[HTR_ETAT]
-	  ,[PAY_ID]
- FROM [Hotel].[dbo].[T_E_HOTELIER_HTR]
-									</code></pre>
-								</td>
-							</tr>
-						</table>
-						
-					</section>
-					<section id="achievement-example-4">
-						<h3>Exemple de réalisation</h3>
-						<h2>Service Hotelier</h2>
-						<p>
-							Le service Hôtelier permet de manipuler le modèle hôtelier, il permet:
-						</p>
-						<ul>
-							<li>
-								de créer un hôtelier
-							</li>
-							<li>
-								de l'éditer
-							</li>
-							<li>
-								d'afficher un ou tous les hôteliers
-							</li>	
-
-							<pre><code>
-public int Create(Hotelier hôtelier)
-{
-	try	{
-		DataAccess da = new DataAccess();
-		int id = da.InsertHotelier(
-			hôtelier.Nom,
-			hôtelier.Prenom,
-			/* ... */
-			hôtelier.PAY_ID		);
-		return id;	}
-	catch
-	{
-		return -1;	}
-}
-							</code></pre>										
-					</section>
-					<section id="achievement-example-5">
-						<h3>Exemple de réalisation</h3>
-						<h2>Contrôleur hôtelier</h2>
-						<p>
-							Le contrôlleur permet de faire le lien entre la vue et le modèle.
-						</p>
-						<table>
-							<tr>
-								<td>
-									<pre><code>
-public int Create(Hotelier hôtelier){
-	try	{
-		DataAccess da = new DataAccess();
-		int id = da.InsertHotelier(
-			hôtelier.Nom,
-			hôtelier.Prenom,
-			Hotelier.HashPassword(hôtelier.MotPasse),
-			/* ... */
-			hôtelier.PAY_ID
-		);
-		return id;	}
-	catch	{
-		return -1;	}
-}
-									</code></pre>
-								</td>
-								<td>
-									<pre><code>
-public ActionResult Create(Hotelier post)	{
-		if (!ModelState.IsValid)
-			return View();
-		HotelierService hôtelierService = new HotelierService();
-		Hotelier hôtelier = new Hotelier();
-		// remplit l'objet hôtelier à partir du formulaire (post)
-		UpdateModel(hôtelier);
-		if (hôtelierService.Create(hôtelier) != -1) // si la création dans la base a fonctionné
-			return Redirect("/");
-		else		{
-			// sinon, on retourne la vue avec un message d'erreur
-			ViewData["ErrorMessage"] = "Impossible d'insérer l'hôtelier.";
-			return View();		}
-	}
-									</code></pre>
-								</td>
-							</tr>
-						</table>
-					</section>
-					<section id="achievement-example-6">
-						<h3>Exemple de réalisation</h3>
-						<h2>La vue</h2>
-							<img src="img/formulaireHotelier.jpg">
-					</section>
-				</section>
-
-				<!-- Gestion de projet -->
-				<section id="project-management">
-					<section id="project-management-1">
-						<h1>Gestion de projet</h1>
-					</section>
-					<section id="project-management-2">
-						<h3>Gestion de projet</h3>
-						<h2>Résumé des sprints</h2>
-						<p>
-							<b>Sprint 1</b> : 0 histoire à faire valider
-						</p>
-						<p>
-							<b>Sprint 2</b> :  8 histoires présentées, 3 en cours, 6 validées
-						</p>
-					</section>
-					<section id="project-management-3">
-						<h3>Gestion de projet</h3>
-						<h2>Scrum</h2>
-						<ul>
-							<li><span class="positive">(+)</span> Rapide à mettre en place (histoires et prioritées fournies)</li>
-							<li><span class="neutral">(+/-)</span> Ajout de tâches <em>non-histoires</em> (des bugs ou mémo)</li>
-							<li><span class="positive">(+)</span> Utilisation de Trello simple et efficace (Kanban déjà utilisé pour nos projets personnels)</li>
-						</ul>
-					</section>
-				</section>
-
-				<!-- Conclusion personnel -->
-				<section id="personnal-conclusion">
-					<section id="personnal-conclusion-1">
-						<h1>Bilan personnel</h1>
-					</section>
-					<section id="personnal-conclusion-2">
-						<h3>Bilan personnel</h3>
-						<h2>Baptiste Bouchereau</h2>
-						<ul>
-						    <li>Découverte de nouveaux outils (TFS, Visual Studio, Trello)</li>
-						    <li>Mise en application de la méthode SCRUM.</li>
-						</ul>
-					</section>
-					<section id="personnal-conclusion-3">
-						<h3>Bilan personnel</h3>
-						<h2>Damien Cartet</h2>
-						<ul>
-							<li>
-								Un sujet interressant.
-							</li>
-							<li>
-								Mise en application de la méthode SCRUM.
-							</li>
-							<li>
-								Les outils de travail n'étaient pas adaptés.
-							</li>
-						</ul>
-					</section>
-					<section id="personnal-conclusion-3">
-						<h3>Bilan personnel</h3>
-						<h2>Pierre-Jean Leger</h2>
-						<ul>
-							<li>Regret</li>
-							<li>SCRUM</li>
-							<li>Liens entre autres langages/framework</li>
-						</ul>
-					</section>
-					<section id="personnal-conclusion-4">
-						<h3>Bilan personnel</h3>
-						<h2>Jeremy Longin</h2>
-						<ul>
-							<li>TPs très directifs</li>
-							<ul>
-								<li><span class="positive">(+)</span>Utile pour le projet</li>
-								<li><span class="negative">(-)</span>Compréhension réduite</li>
-							</ul>
-							<li>Difficulté de démarrage</li>
-							<li>Découverte de nouveaux outils : TFS, Trello</li>
-							<li>Mise en applicaion de la méthode SCRUM</li>
-						</ul>
-					</section>
-				</section>
-
-				<!-- Conclusion -->
-				<section id="conclusion">
-					<section id="conclusion-1">
-						<h1>Conclusion</h1>
-					</section>
-					<section id="conclusion-2">
-						<h3>Conclusion</h3>
-						<h2>Problèmes rencontrés</h2>
-						<table>
-							<tr>
-								<th>Problème</th>
-								<th>Raison</th>
-								<th>Solution</th>
-							</tr>
-							<tr>
-								<td>Impossible d'utiliser Entity Framework</td>
-								<td>Utilisation d'un dual-boot plutôt que la VM</td>
-								<td>Installation identique à la VM</td>
-							</tr>
-						</table>
-					</section>
-					<section id="conclusion-3">
-						<h3>Conclusion</h3>
-						<h2>Problèmes rencontrés</h2>
-						<table>
-							<tr>
-								<th>Problème</th>
-								<th>Raison</th>
-								<th>Solution</th>
-							</tr>
-							<tr>
-								<td>Remplissage des ViewBags</td>
-								<td>Oubli de certains cas</td>
-								<td>Factorisation du code</td>
-							</tr>
-						</table>
-					</section>
-					<section id="conclusion-4">
-						<h3>Conclusion</h3>
-						<h2>Problèmes rencontrés</h2>
-						<table>
-							<tr>
-								<th>Problème</th>
-								<th>Raison</th>
-								<th>Solution</th>
-							</tr>
-							<tr>
-								<td>Manque de temps</td>
-								<td>Difficultés sur l'API REST</td>
-								<td>Pivoter sur une autre architecture</td>
-							</tr>
-						</table>
-					</section>
-					<section id="conclusion-5">
-						<h3>Conclusion</h3>
-						<h2>Conclusion du projet</h2>
-						<ul>
-							<li><span class="negative">(-)</span> Frustrant car trop peu de temps pour prendre en main la technologie</li>
-						</ul>
-					</section>
-					<section id="conclusion-6">
-						<h3>Conclusion</h3>
-						<h2>Conclusion du module</h2>
-						<ul>
-							<li><span class="negative">(-)</span> TPs un peu trop assistés</li>
-							<li><span class="positive">(+)</span> Sujets intéressants (cas réels)</li>
-							<li><span class="positive">(+)</span> 1er approche projet Scrum</li>
-						</ul>
-					</section>
-				</section>
-
-				
 
 				<section id="end">
 					<h2>Merci de votre attention</h2>
