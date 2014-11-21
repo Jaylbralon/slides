@@ -79,48 +79,101 @@
 					<h2>Sommaire</h2>
 					
 					<ol>
-						<li><a href="#proj">Objectifs du projet</a></li>
-						<li><a href="#fonc">Fonctionnalités réalisées</a></li>
+						<li><a href="#proj">Le projet</a></li>
+						<li><a href="#arch">L'architecture</a></li>
+						<li><a href="#tach">Les tâches</a></li>
+						<li><a href="#fait">Fonctionnalités réalisées</a></li>
+						<li><a href="#nfait">Fonctionnalités non réalisées</a></li>
 						<li><a href="#demo">Démonstration</a></li>
-						<li><a href="#prob">Problèmes rencontrés</a></li>
-						<li><a href="#conclusion">Conclusion</a></li>
+						<li><a href="#prob">Difficultés rencontrées</a></li>
+						<li><a href="#ccl">Conclusion</a></li>
 					</ol>
 				</section>
 
-				<!-- Objectif du projet -->
+				<!-- Le projet -->
 				<section id="proj">
 					<section id="proj-1">
-						<h1>Objectifs du projet</h1>
+						<h1>Le projet</h1>
 					</section>
 					<section id="proj-2">
-						<h3>Objectifs du projet</h3>
+						<h3>Le projet</h3>
 						<p>
 							Réaliser une application de gestion de projet en utilisant les technologies Java EE.<br/><br/>
 							Fonctionnalités de base :<br/>
 						</p>
 						<ul>
-							<li>Créer un utilisateur</li>
+							<li>Ajouter un utilisateur</li>
 							<li>Afficher la liste des utilisateurs</li>
 							<li>Créer/terminer des conversations</li>
 							<li>Envoyer des messages</li>
-							<li>Créer une activité</li>
-							<li>Créer un projet</li>
+							<li>Ajouter une activité</li>
+							<li>Ajouter un projet</li>
 							<li>Afficher les projets</li>
-							<li>...</li>
 						</ul>
 					</section>
 				</section>
 
+				<!-- L'architecture -->
+				<section id="arch">
+					<section id="arch-1">
+						<h1>L'architecture</h1>
+					</section>
+					<section id="arch-2">
+						<h3>L'architecture</h3>
+						<p>
+							Un projet EAR contenant :<br/>
+						</p>
+						<ul>
+							<li>un JPA : représentation de la base de données (Modèle)</li>
+							<li>un EJB : contact le JPA (Controlleur)</li>
+							<li>un WEB : permet le lien entre l'utilisateur et le controleur</li>
+							<ul>
+								<li>Modèle, Vue, Controleur</li>
+							</ul>
+						</ul>
+					</section>
+				</section>
+
+				<!-- Les taches -->
+				<section id="tach">
+					<section id="tach-1">
+						<h1>Les tâches</h1>
+					</section>
+					<section id="tach-2">
+						<h3>Les tâches</h3>
+						<p>
+							TODO<br/>
+						</p>
+					</section>
+				</section>
+
 				<!-- Fonctionnalites realisees -->
-				<section id="fonc">
-					<section id="fonc-1">
+				<section id="fait">
+					<section id="fait-1">
 						<h1>Fonctionnalités réalisées</h1>
 					</section>
-					<section id="fonc-2">
+					<section id="fait-2">
 						<h3>Fonctionnalités réalisées</h3>
 						<ul>
-							<li>Afficher la liste des utilisateurs</li>
 							<li>Ajouter un utilisateur</li>
+							<li>Afficher la liste des utilisateurs</li>
+							<li>Ajouter un projet</li>
+							<li>Afficher les projets</li>
+						</ul>
+					</section>
+				</section>
+
+				<!-- Fonctionnalites non realisees -->
+				<section id="nfait">
+					<section id="nfait-1">
+						<h1>Fonctionnalités non réalisées</h1>
+					</section>
+					<section id="nfait-2">
+						<h3>Fonctionnalités non réalisées</h3>
+						<ul>
+							<li>Créer/terminer des conversations</li>
+							<li>Envoyer des messages</li>
+							<li>Ajouter une activité (en cours)</li>
 						</ul>
 					</section>
 				</section>
@@ -132,15 +185,15 @@
 					</section>
 				</section>
 
-				<!-- Problemes rencontres -->
+				<!-- Difficultes rencontrees -->
 				<section id="prob">
 					<section id="prob-1">
-						<h1>Problèmes rencontrés</h1>
+						<h1>Difficultés rencontrées</h1>
 					</section>
 					<section id="prob-2">
-						<h3>Problèmes rencontrés</h3>
+						<h3>Difficultés rencontrées</h3>
 						<p>
-							Configuration des projets avec l'utilisation de Git.<br/>
+							Configuration des projets avec l'utilisation de Git<br/>
 						</p>
 						<ul>
 							<li>La configuration était écrasée</li>
@@ -151,6 +204,23 @@
 						</p>
 						<ul>
 							<li>Ne versionner que les classes java et les fichiers xhtml</li>
+						</ul>
+					</section>
+					<section id="prob-3">
+						<h3>Difficultés rencontrées</h3>
+						<p>
+							Liées à la configuration du projet<br/>
+						</p>
+						<ul>
+							<li>Connexion à la base de données</li>
+							<li>Différence de JDK</li>
+						</ul>
+						<p>
+							<br/>
+							Solution :
+						</p>
+						<ul>
+							<li>TODO</li>
 						</ul>
 					</section>
 				</section>
