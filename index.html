@@ -59,6 +59,7 @@
 
 			<div class="slides">
 				<section id="first">
+					<img src="./img/java.png" style="width: 180px" alt="">
 					<h1>Java EE</h1>
 					<h2>Soutenance de fin de projet</h2>
 					<p>
@@ -77,16 +78,14 @@
 
 				<section id="table-of-content">
 					<h2>Sommaire</h2>
-					
 					<ol>
 						<li><a href="#proj">Le projet</a></li>
-						<li><a href="#arch">L'architecture</a></li>
 						<li><a href="#tach">Les tâches</a></li>
+						<li><a href="#arch">L'architecture</a></li>
 						<li><a href="#fait">Fonctionnalités réalisées</a></li>
 						<li><a href="#nfait">Fonctionnalités non réalisées</a></li>
-						<li><a href="#demo">Démonstration</a></li>
 						<li><a href="#prob">Difficultés rencontrées</a></li>
-						<li><a href="#ccl">Conclusion</a></li>
+						<li><a href="#demo">Démonstration</a></li>
 					</ol>
 				</section>
 
@@ -97,18 +96,79 @@
 					</section>
 					<section id="proj-2">
 						<h3>Le projet</h3>
-						<p>
-							Réaliser une application de gestion de projet en utilisant les technologies Java EE.<br/><br/>
-							Fonctionnalités de base :<br/>
-						</p>
+						<h4>
+							Réaliser une application de gestion de projet et messagerie en utilisant les technologies Java EE.<br/>
+						</h4>
+					</section>
+					<section id="proj-3">
+						<h3>Le projet - Gestion de projet</h3>
 						<ul>
 							<li>Ajouter un utilisateur</li>
 							<li>Afficher la liste des utilisateurs</li>
-							<li>Créer/terminer des conversations</li>
-							<li>Envoyer des messages</li>
 							<li>Ajouter une activité</li>
 							<li>Ajouter un projet</li>
 							<li>Afficher les projets</li>
+						</ul>
+					</section>
+					<section id="proj-4">
+						<h3>Le projet - Messagerie</h3>
+						<ul>
+							<li>Créer des conversations</li>
+							<li>Terminer des conversations</li>
+							<li>Envoyer des messages</li>
+							<li>Utilisation de JMS</li>
+						</ul>
+					</section>
+				</section>
+
+				<!-- Les taches -->
+				<section id="tach">
+					<section id="tach-1">
+						<h1>Les tâches</h1>
+					</section>
+					<section id="tach-2">
+						<h3>Les tâches</h3>
+						<h4>
+							Première partie<br/>
+						</h4>
+						<ul>
+							<li>Choix de l'architecture</li>
+							<li>Création intiale du projet</li>
+							<li>Configuration des machines</li>
+							<li>Création de la base de données</li>
+							<li>Création du dépot GIT</li>
+						</ul>
+					</section>
+					<section id="tach-3">
+						<h3>Les tâches</h3>
+						<h4>
+							Deuxième partie<br/>
+						</h4>
+						<ul>
+							<li>Réalisation de la partie gestion de projet</li>
+							<ul>
+								<u><li>Damien, Jérémy et Nicolas</li></u>
+							</ul>
+						</ul>
+					</section>
+					<section id="tach-3">
+						<h3>Les tâches</h3>
+						<h4>
+							Deuxième partie<br/>
+						</h4>
+						<ul>
+							<li>Réalisation de la partie messagerie</li>
+							<ul>
+								<u><li>Baptiste et Pierre-Jean</li></u>
+							</ul>
+						</ul>
+					</section>
+					<section id="tach-4">
+						<h3>Les tâches</h3>
+						<h4>Détails de la réalisation</h4>
+						<ul>
+							<li>Une fonctionnalité par personne</li>
+							<li>Parallélisation des tâches</li>
 						</ul>
 					</section>
 				</section>
@@ -120,15 +180,15 @@
 					</section>
 					<section id="arch-2">
 						<h3>L'architecture</h3>
-						<p>
-							Un projet EAR contenant :<br/>
-						</p>
 						<ul>
-							<li>un JPA : représentation de la base de données (Modèle)</li>
-							<li>un EJB : contact le JPA (Controlleur)</li>
-							<li>un WEB : permet le lien entre l'utilisateur et le controleur</li>
+							<li>Un projet EAR contenant</li>
 							<ul>
-								<li>Modèle, Vue, Controleur</li>
+								<li>un JPA : représentation de la base de données (Modèle)</li>
+								<li>un EJB : contact le JPA (Controlleur)</li>
+								<li>un WEB : permet le lien entre l'utilisateur et le controleur</li>
+								<ul>
+									<li>Modèle, Vue, Controleur</li>
+								</ul>
 							</ul>
 						</ul>
 					</section>
@@ -138,52 +198,6 @@
 							Modèle de données :<br/>
 						</p>
 						<img src="./img/BDDmodel.png" alt="404 not found">
-					</section>
-				</section>
-
-				<!-- Les taches -->
-				<section id="tach">
-					<section id="tach-1">
-						<h1>Les tâches</h1>
-					</section>
-					<section id="tach-2">
-						<h3>Les tâches</h3>
-						<p>
-							Répartition initiale<br/>
-						</p>
-						<ul>
-							<li>Toute l'équipe</li>
-							<ul>
-								<li>Création initiale du projet</li>
-								<li>Création du dépot GIT</li>
-								<li>Configuration des machines</li>
-							</ul>
-							<li>Damien, Jérémy et Nicolas</li>
-							<ul>
-								<li>Réalisation de la partie utilisateurs et projets</li>
-							</ul>
-							<li>Baptiste et Pierre-Jean</li>
-							<ul>
-								<li>Réalisation de la partie messagerie</li>
-							</ul>
-						</ul>
-					</section>
-					<section id="tach-3">
-						<h3>Les tâches</h3>
-						<p>
-							Répartition suite aux premières difficultés<br/>
-						</p>
-						<ul>
-							<li>Toute l'équipe</li>
-							<ul>
-								<li>Création initiale du projet</li>
-								<li>Création du dépot GIT</li>
-								<li>Configuration des machines</li>
-								<li>Réalisation de la partie utilisateur</li>
-								<li>Une sous fonctionnalité par personne</li>
-								<li>Tests</li>
-							</ul>
-						</ul>
 					</section>
 				</section>
 
@@ -199,6 +213,7 @@
 							<li>Afficher la liste des utilisateurs</li>
 							<li>Ajouter un projet</li>
 							<li>Afficher les projets</li>
+							<li>Ajouter une activité</li>
 						</ul>
 					</section>
 				</section>
@@ -213,15 +228,7 @@
 						<ul>
 							<li>Créer/terminer des conversations</li>
 							<li>Envoyer des messages</li>
-							<li>Ajouter une activité (en cours)</li>
 						</ul>
-					</section>
-				</section>
-
-				<!-- Demonstration -->
-				<section id="demo">
-					<section id="demo-1">
-						<h1>Démonstration</h1>
 					</section>
 				</section>
 
@@ -254,7 +261,15 @@
 						<ul>
 							<li>Connexion à la base de données</li>
 							<li>Différence de JDK</li>
+							<li>Problèmes de configuration divers</li>
 						</ul>
+					</section>
+				</section>
+
+				<!-- Demonstration -->
+				<section id="demo">
+					<section id="demo-1">
+						<h1>Démonstration</h1>
 					</section>
 				</section>
 
